@@ -1,0 +1,15 @@
+body{
+    font-family: 'Righteous', cursive;
+}
+p{
+    font-family: 'Quicksand', sans-serif;
+}
+.header .navbar{
+    width: 100%;
+}
+.header .navbar .navbar-nav{
+    width: 100%;
+}
+.header .navbar .navbar-nav .nav-item{
+    text-transform: capitalize;
+}

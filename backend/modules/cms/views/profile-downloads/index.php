@@ -1,0 +1,68 @@
+<?php
+
+use yii\helpers\Html;
+use yii\grid\GridView;
+
+/* @var $this yii\web\View */
+/* @var $searchModel common\models\ProfileDownloadsSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = 'Profile Downloads';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="profile-downloads-index">
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
+
+
+                </div>
+                <div class="panel-body">
+                    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
+                    <?= Html::a('<i class="fa-th-list"></i><span> Create Profile Downloads</span>', ['create'], ['class' => 'btn btn-warning  btn-icon btn-icon-standalone']) ?>
+                    <?=
+                    GridView::widget([
+                        'dataProvider' => $dataProvider,
+                        'filterModel' => $searchModel,
+                        'columns' => [
+                            ['class' => 'yii\grid\SerialColumn'],
+//                                                            'id',
+                            [
+                                'attribute' => 'image',
+                                'format' => 'raw',
+                                'value' => function ($data) {
+                                    if (!empty($data->image))
+                                        $img = '<img width="120px" src="' . Yii::$app->homeUrl . '../uploads/profile_downloads/' . $data->id . '/profile_image.' . $data->image . '"/>';
+                                    return $img;
+                                },
+                            ],
+                            'title',
+                            [
+                                'attribute' => 'pdf',
+                                'format' => 'raw',
+                                'value' => function ($data) {
+                                    if (!empty($data->image))
+                                        $img = '<a style="color: #394ea0;font-weight: 700;" href="' . Yii::$app->homeUrl . '../uploads/profile_downloads/' . $data->id . '/profile_download.' . $data->pdf . '" target="_blank">Download Profile</a>';
+                                    return $img;
+                                },
+                            ],
+                            // 'UB',
+                            // 'DOC',
+                            // 'DOU',
+                            ['class' => 'yii\grid\ActionColumn',
+                                'template' => '{update}{delete}'],
+                        ],
+                    ]);
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

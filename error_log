@@ -1,0 +1,44 @@
+[20-Jun-2018 16:30:31 Etc/GMT] PHP Warning:  Uncaught exception 'yii\base\ErrorException' with message 'require(/home/avensiauae/public_html/frontend/assets/params.php): failed to open stream: No such file or directory' in /home/avensiauae/public_html/frontend/assets/AppAsset.php:4
+Stack trace:
+#0 /home/avensiauae/public_html/frontend/assets/AppAsset.php(4): yii\base\ErrorHandler->handleError(2, 'require(/home/a...', '/home/avensiaua...', 4, Array)
+#1 /home/avensiauae/public_html/frontend/assets/AppAsset.php(4): require()
+#2 /home/avensiauae/public_html/vendor/yiisoft/yii2/BaseYii.php(293): include('/home/avensiaua...')
+#3 [internal function]: yii\BaseYii::autoload('frontend\\assets...')
+#4 /home/avensiauae/public_html/frontend/views/layouts/main.php(8): spl_autoload_call('frontend\\assets...')
+#5 /home/avensiauae/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/avensiaua...')
+#6 /home/avensiauae/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/avensiaua...', Array)
+#7 /home/avensiauae/public_html in /home/avensiauae/public_html/frontend/assets/AppAsset.php on line 4
+[20-Jun-2018 16:30:31 Etc/GMT] PHP Fatal error:  main(): Failed opening required '/home/avensiauae/public_html/frontend/assets/params.php' (include_path='.:/opt/alt/php54/usr/share/pear:/opt/alt/php54/usr/share/php') in /home/avensiauae/public_html/frontend/assets/AppAsset.php on line 4
+[20-Jun-2018 16:30:45 Etc/GMT] PHP Warning:  Uncaught exception 'yii\base\ErrorException' with message 'require(/home/avensiauae/public_html/frontend/assets/params.php): failed to open stream: No such file or directory' in /home/avensiauae/public_html/frontend/assets/AppAsset.php:4
+Stack trace:
+#0 /home/avensiauae/public_html/frontend/assets/AppAsset.php(4): yii\base\ErrorHandler->handleError(2, 'require(/home/a...', '/home/avensiaua...', 4, Array)
+#1 /home/avensiauae/public_html/frontend/assets/AppAsset.php(4): require()
+#2 /home/avensiauae/public_html/vendor/yiisoft/yii2/BaseYii.php(293): include('/home/avensiaua...')
+#3 [internal function]: yii\BaseYii::autoload('frontend\\assets...')
+#4 /home/avensiauae/public_html/frontend/views/layouts/main.php(8): spl_autoload_call('frontend\\assets...')
+#5 /home/avensiauae/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/avensiaua...')
+#6 /home/avensiauae/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/avensiaua...', Array)
+#7 /home/avensiauae/public_html in /home/avensiauae/public_html/frontend/assets/AppAsset.php on line 4
+[20-Jun-2018 16:30:45 Etc/GMT] PHP Fatal error:  main(): Failed opening required '/home/avensiauae/public_html/frontend/assets/params.php' (include_path='.:/opt/alt/php54/usr/share/pear:/opt/alt/php54/usr/share/php') in /home/avensiauae/public_html/frontend/assets/AppAsset.php on line 4
+[20-Jun-2018 16:30:58 Etc/GMT] PHP Warning:  Uncaught exception 'yii\base\ErrorException' with message 'require(/home/avensiauae/public_html/frontend/assets/params.php): failed to open stream: No such file or directory' in /home/avensiauae/public_html/frontend/assets/AppAsset.php:4
+Stack trace:
+#0 /home/avensiauae/public_html/frontend/assets/AppAsset.php(4): yii\base\ErrorHandler->handleError(2, 'require(/home/a...', '/home/avensiaua...', 4, Array)
+#1 /home/avensiauae/public_html/frontend/assets/AppAsset.php(4): require()
+#2 /home/avensiauae/public_html/vendor/yiisoft/yii2/BaseYii.php(293): include('/home/avensiaua...')
+#3 [internal function]: yii\BaseYii::autoload('frontend\\assets...')
+#4 /home/avensiauae/public_html/frontend/views/layouts/main.php(8): spl_autoload_call('frontend\\assets...')
+#5 /home/avensiauae/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/avensiaua...')
+#6 /home/avensiauae/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/avensiaua...', Array)
+#7 /home/avensiauae/public_html in /home/avensiauae/public_html/frontend/assets/AppAsset.php on line 4
+[20-Jun-2018 16:30:58 Etc/GMT] PHP Fatal error:  main(): Failed opening required '/home/avensiauae/public_html/frontend/assets/params.php' (include_path='.:/opt/alt/php54/usr/share/pear:/opt/alt/php54/usr/share/php') in /home/avensiauae/public_html/frontend/assets/AppAsset.php on line 4
+[20-Jun-2018 16:31:09 Etc/GMT] PHP Warning:  Uncaught exception 'yii\base\ErrorException' with message 'require(/home/avensiauae/public_html/frontend/assets/params.php): failed to open stream: No such file or directory' in /home/avensiauae/public_html/frontend/assets/AppAsset.php:4
+Stack trace:
+#0 /home/avensiauae/public_html/frontend/assets/AppAsset.php(4): yii\base\ErrorHandler->handleError(2, 'require(/home/a...', '/home/avensiaua...', 4, Array)
+#1 /home/avensiauae/public_html/frontend/assets/AppAsset.php(4): require()
+#2 /home/avensiauae/public_html/vendor/yiisoft/yii2/BaseYii.php(293): include('/home/avensiaua...')
+#3 [internal function]: yii\BaseYii::autoload('frontend\\assets...')
+#4 /home/avensiauae/public_html/frontend/views/layouts/main.php(8): spl_autoload_call('frontend\\assets...')
+#5 /home/avensiauae/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/avensiaua...')
+#6 /home/avensiauae/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/avensiaua...', Array)
+#7 /home/avensiauae/public_html in /home/avensiauae/public_html/frontend/assets/AppAsset.php on line 4
+[20-Jun-2018 16:31:09 Etc/GMT] PHP Fatal error:  main(): Failed opening required '/home/avensiauae/public_html/frontend/assets/params.php' (include_path='.:/opt/alt/php54/usr/share/pear:/opt/alt/php54/usr/share/php') in /home/avensiauae/public_html/frontend/assets/AppAsset.php on line 4
