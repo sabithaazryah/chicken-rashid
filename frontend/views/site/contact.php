@@ -5,152 +5,177 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
 if (isset($meta_tags->meta_title) && $meta_tags->meta_title != '') {
-    $this->title = $meta_tags->meta_title;
+        $this->title = $meta_tags->meta_title;
 } else {
-    $this->title = 'Contact Us';
+        $this->title = 'Chicken Rashid';
 }
 ?>
-<section class="in-banner"><!--in-banner-->
-    <div class="container">
-        <div class="banner-cont">
-            <h2>Contact Us</h2>
-        </div>
-        <div class="main-breadcrumb">
-            <?= Html::a('Home', ['/site/index']) ?><i>|</i><span>Contact</span> </div>
-    </div>
-</section>
-<!--in-banner-->
 
-<section class="in-contact-section"><!--in-about-section-->
-    <div class="container">
-        <div class="contact-box">
-            <div class="main-head">
-                <h2 class="head">Avensia Group</h2>
-                <small class="small-text">Get in touch with us</small> </div>
-            <div class="row">
-                <?php
-                if (!empty($contact_addresses)) {
-                    foreach ($contact_addresses as $contact_address) {
-                        if (!empty($contact_address)) {
-                            ?>
-                            <div class="col-lg-3 col-md-6 col-sm-6">
-                                <div class="location">
-                                    <h2 class="head"><?= $contact_address->address_title ?></h2>
-                                    <div class="sub-box">
-                                        <?php if ($contact_address->telephone != '') { ?>
-                                            <p><b>TEL:</b> <?= $contact_address->telephone ?></p>
-                                        <?php }
-                                        ?>
-                                        <?php if ($contact_address->fax != '') { ?>
-                                            <p><b>FAX:</b> <?= $contact_address->fax ?></p>
-                                        <?php }
-                                        ?>
-                                        <?php if ($contact_address->po_box != '') { ?>
-                                            <p><b>P.O.BOX:</b> <?= $contact_address->po_box ?></p>
-                                        <?php }
-                                        ?>
-                                        <?php if ($contact_address->address != '') { ?>
-                                            <p><?= $contact_address->address ?></p>
-                                        <?php }
-                                        ?>
-                                    </div>
-                                    <?php if ($contact_address->tech_solution_phone != '' || $contact_address->general_trading_phone) { ?>
-                                        <h2 class="head">Contact Person</h2>
-                                        <?php if ($contact_address->tech_solution_phone != '') { ?>
-                                            <p><span>Tech Solutions LLC:</span><br> <?= $contact_address->tech_solution_phone ?></p>
-                                        <?php }
-                                        ?>
-                                        <?php if ($contact_address->general_trading_phone != '') { ?>
-                                            <p><span>General Trading: </span><br> <?= $contact_address->general_trading_phone ?></p>
-                                        <?php }
-                                        ?>
-                                        <?php if ($contact_address->it_phone != '') { ?>
-                                            <p><span>IT Service: </span><br> <?= $contact_address->it_phone ?></p>
-                                        <?php }
-                                        ?>
-                                    <?php }
-                                    ?>
+<section id="main" class="site-main">
+        <section id="opal-breadscrumb" class="opal-breadscrumb mbtmo" style="">
+                <div class="container">
+                        <ol class="breadcrumb">
+                                <li><a href="<?= Yii::$app->homeUrl ?>">Home</a> </li>
+                                <li class="active">Contact Us</li>
+                        </ol>
+                </div>
+        </section>
+        <section id="main-container" class="container-fluid inner">
+                <div class="row">
+
+                        <div id="main-content" class="main-content col-xs-12 col-lg-12 col-md-12">
+                                <div id="primary" class="content-area">
+                                        <div id="content" class="site-content" role="main">
+                                                <article id="post-24" class="post-24 page type-page status-publish hentry kingcomposer kc-css-system masthead-fixed singular">
+                                                        <div class="entry-content-page">
+                                                                <div class="kc_clfw"></div>
+                                                                <section class="kc-elm kc-css-685015 kc_row">
+                                                                        <div class="kc-row-container">
+                                                                                <div class="kc-wrap-columns">
+                                                                                        <div class="kc-elm kc-css-696978 kc_col-sm-6 kc_column kc_col-sm-6 pad0">
+                                                                                                <div class="kc-col-container">
+                                                                                                        <div id="map770523531" data-lat="40.6700" data-lng=" -73.9400" class="kc-google-maps opal-kc-google-maps" style="width: 100%;height: 495px;">
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="kc-elm kc-css-18196 kc_col-sm-6 kc_column kc_col-sm-6">
+                                                                                                <div class="kc-col-container">
+
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                </section>
+                                                                <section class="kc-elm kc-css-96756 kc_row mbtm120">
+                                                                        <div class="kc-row-container  kc-container">
+                                                                                <div class="kc-wrap-columns">
+                                                                                        <div class="kc-elm kc-css-711576 kc_col-sm-12 kc_column kc_col-sm-12">
+                                                                                                <div class="kc-col-container">
+                                                                                                        <div class="element-block-heading style-special">
+                                                                                                                <div class="inner">
+
+                                                                                                                        <h2 class="heading">Contact us</h2>
+
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                        <div id=" " class="kc-elm kc-css-638979 kc_row kc_row_inner">
+                                                                                                                <div class="kc-elm kc-css-936099 kc_col-sm-9 kc_column_inner kc_col-sm-9">
+                                                                                                                        <div class="kc_wrapper kc-col-inner-container">
+                                                                                                                                <div class="kc-elm kc-css-156628 kc-title-wrap ">
+
+                                                                                                                                        <h2 class="kc_title">Leave us a Message</h2>Aenean massa diam, viverra vitae luctus sed, gravida eget est. Etiam nec ipsum porttitor,
+                                                                                                                                        <br> consequat libero eu, dignissim eros. Nulla auctor lacinia enim id mollis.
+                                                                                                                                </div>
+                                                                                                                                <div class="kc-elm kc-css-481868" style="height: 40px; clear: both; width:100%;"></div>
+                                                                                                                                <div class="kc-elm kc-css-904852 kc_text_block">
+                                                                                                                                        <div role="form" class="wpcf7" id="wpcf7-f8968-p24-o1" lang="en-US" dir="ltr">
+                                                                                                                                                <div class="screen-reader-response"></div>
+                                                                                                                                                <form action="" method="post" class="wpcf7-form" novalidate="novalidate">
+                                                                                                                                                        <div class="row">
+                                                                                                                                                                <div class="form-group col-md-6 col-sm-12">
+                                                                                                                                                                        <label>First name<span class="text-primary">*</span></label>
+                                                                                                                                                                        <br />
+                                                                                                                                                                        <span class="wpcf7-form-control-wrap text-799"><input type="text" name="text-799" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" id="your_name" aria-required="true" aria-invalid="false" /></span>
+                                                                                                                                                                </div>
+                                                                                                                                                                <div class="form-group col-md-6 col-sm-12">
+                                                                                                                                                                        <label>Last name<span class="text-primary">*</span></label>
+                                                                                                                                                                        <br />
+                                                                                                                                                                        <span class="wpcf7-form-control-wrap text-789"><input type="text" name="text-789" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" id="last_name" aria-required="true" aria-invalid="false" /></span></p>
+                                                                                                                                                                </div>
+                                                                                                                                                                <div class="form-group col-md-6 col-sm-12">
+                                                                                                                                                                        <label>Email<span class="text-primary">*</span></label>
+                                                                                                                                                                        <br />
+                                                                                                                                                                        <span class="wpcf7-form-control-wrap email-257"><input type="email" name="email-257" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" id="your_email" aria-required="true" aria-invalid="false" /></span>
+                                                                                                                                                                </div>
+                                                                                                                                                                <div class="form-group col-md-6 col-sm-12">
+                                                                                                                                                                        <label>Subject</label>
+                                                                                                                                                                        <br />
+                                                                                                                                                                        <span class="wpcf7-form-control-wrap text-400"><input type="text" name="text-400" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" id="subject" aria-required="true" aria-invalid="false" /></span>
+                                                                                                                                                                </div>
+                                                                                                                                                        </div>
+                                                                                                                                                        <div class="form-group area-content">
+                                                                                                                                                                <label>Your message</label>
+                                                                                                                                                                <br />
+                                                                                                                                                                <span class="wpcf7-form-control-wrap textarea-552"><textarea name="textarea-552" cols="6" rows="12" class="wpcf7-form-control wpcf7-textarea form-control" id="your_message" aria-invalid="false"></textarea></span>
+                                                                                                                                                        </div>
+                                                                                                                                                        <div class="form-group">
+                                                                                                                                                                <input type="submit" value="Send Message" class="wpcf7-form-control wpcf7-submit btn btn-primary" />
+                                                                                                                                                        </div>
+                                                                                                                                                        <div class="wpcf7-response-output wpcf7-display-none"></div>
+                                                                                                                                                </form>
+                                                                                                                                        </div>
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                                <div class="kc-elm kc-css-606304 kc_col-sm-3 kc_column_inner kc_col-sm-3">
+                                                                                                                        <div class="kc_wrapper kc-col-inner-container">
+                                                                                                                                <div class="kc-elm kc-css-684352 kc-title-wrap ">
+
+                                                                                                                                        <h2 class="kc_title">Contact Info</h2>
+                                                                                                                                </div>
+                                                                                                                                <div class="kc-elm kc-css-681943 kc-raw-code">
+                                                                                                                                        <div class="media">
+                                                                                                                                                <div class="media-left"><i class="fa-fw fa fa-map-marker"></i></div>
+                                                                                                                                                <div class="media-body">901-947 South Drive, Houston, TX 77057, USA</div>
+                                                                                                                                        </div>
+                                                                                                                                        <div class="media">
+                                                                                                                                                <div class="media-left"><i class="fa-fw fa fa-envelope"></i></div>
+                                                                                                                                                <div class="media-body">support@burgerking.com</div>
+                                                                                                                                        </div>
+                                                                                                                                        <div class="media">
+                                                                                                                                                <div class="media-left"><i class="fa-fw fa fa-phone"></i></div>
+                                                                                                                                                <div class="media-body">655-478-3452</div>
+                                                                                                                                        </div>
+
+                                                                                                                                </div>
+                                                                                                                                <div class="kc-elm kc-css-557841" style="height: 40px; clear: both; width:100%;"></div>
+                                                                                                                                <div class="kc-elm kc-css-553542 kc-title-wrap ">
+
+                                                                                                                                        <h2 class="kc_title">Opening Hour</h2>
+                                                                                                                                </div>
+                                                                                                                                <div class="kc-elm kc-css-681061 kc-raw-code">
+                                                                                                                                        <ul class="list-unstyled hours-open">
+                                                                                                                                                <li><span>Monday-Thursday</span>11:00-21:00</li>
+                                                                                                                                                <li><span>Friday-Saturday</span>11:30-22:00</li>
+                                                                                                                                                <li><span>Sundays</span>12:00-20:00</li>
+                                                                                                                                        </ul>
+                                                                                                                                </div>
+                                                                                                                                <div class="kc-elm kc-css-321651" style="height: 40px; clear: both; width:100%;"></div>
+                                                                                                                                <div class="kc-elm kc-css-446831 kc-title-wrap ">
+
+                                                                                                                                        <h2 class="kc_title">Connect Socials</h2>
+                                                                                                                                </div>
+                                                                                                                                <div class="kc-elm kc-css-717368 kc-raw-code">
+                                                                                                                                        <ul class="social list-inline">
+                                                                                                                                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                                                                                                                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                                                                                                                                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                                                                                                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                                                                                                                <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                                                                                                                                                <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+                                                                                                                                        </ul>
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                </section>
+                                                        </div>
+                                                        <!-- .entry-content -->
+                                                </article>
+                                                <!-- #post-## -->
+
+                                        </div>
+                                        <!-- #content -->
                                 </div>
-                            </div>
-                            <?php
-                        }
-                    }
-                }
-                ?>
-            </div>
-        </div>
-    </div>
-</section><!--in-about-section-->
-<section class="in-contact-form"><!--in-contact-form-->
-    <div class="container">
-        <div class="main-head">
-            <h2 class="head">online enquiry</h2>
-            <small class="small-text">contact form</small> </div>
-        <?php // \common\widgets\Alert::widget();  ?>
-        <?php
-        $form = ActiveForm::begin(['id' => 'contact-form', 'options' => [
-                        'class' => 'form-theme'
-        ]]);
-        ?>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Full Name <sup>*</sup></label>
-                    <input name="ContactForm[name]" type="text" class="form-control" required >
-                </div>
-                <div class="form-group">
-                    <label>email<sup>*</sup></label>
-                    <input name="ContactForm[email]" type="email" class="form-control" required >
-                </div>
-                <div class="form-group">
-                    <label>Telephone: (with country code)<sup>*</sup></label>
-                    <input name="ContactForm[phone]" type="text" class="form-control" required >
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Message<sup>*</sup></label>
-                    <textarea name="ContactForm[message]" cols="" rows="" class="form-control" required ></textarea>
-                </div>
-                <div class="form-group">
-                    <?= Html::submitButton('Send Request', ['class' => 'submit', 'name' => 'Submit']) ?>
-                </div>
-            </div>
-        </div>
-        <?php ActiveForm::end(); ?>
-    </div>
-</section><!--in-contact-form-->
-<section class="in-location-map"><!--in-contact-form-->
-    <div class="container">
-        <div class="main-head">
-            <h2 class="head">LOCATION MAP</h2>
-            <small class="small-text">LOCATION MAP</small> </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="map-box">
-                    <h3>Dubai - UAE</h3>
-                    <iframe src="https://www.google.com/maps/d/embed?mid=12WSllz1pue8_NxNItCL9wl20QXg" width="100%" height="350"></iframe>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="map-box">
-                    <h3>Salwa Road, Doha - Qatar</h3>
-                    <iframe src="https://www.google.com/maps/d/embed?mid=12WSllz1pue8_NxNItCL9wl20QXg" width="100%" height="350"></iframe>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="map-box">
-                    <h3>Cochin Office</h3>
-                    <iframe src="https://www.google.com/maps/d/embed?mid=12WSllz1pue8_NxNItCL9wl20QXg" width="100%" height="350"></iframe>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="map-box">
-                    <h3>Representative Office:</h3>
-                    <iframe src="https://www.google.com/maps/d/embed?mid=12WSllz1pue8_NxNItCL9wl20QXg" width="100%" height="350"></iframe>
-                </div>
-            </div>
-        </div>
+                                <!-- #primary -->
 
-    </div>
-</section><!--in-contact-form-->
+                        </div>
+                        <!-- #main-content -->
+
+                </div>
+        </section>
+</section>

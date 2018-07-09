@@ -6,439 +6,265 @@ use yii\helpers\Html;
 use frontend\assets\AppAsset;
 
 AppAsset::register($this);
-$general_tradings = common\models\GeneralTrading::find()->where(['status' => 1])->all();
-$it_service_links = common\models\ItSevices::find()->where(['status' => 1])->all();
-$technical_service_links = common\models\TechnicalServices::find()->where(['status' => 1])->all();
-$facility_service_links = common\models\FacilityManagementDetails::find()->where(['status' => 1])->all();
-$contact_info = \common\models\ContactInfo::find()->where(['id' => 1])->one();
-$about_footer = \common\models\IndexAbout::find()->where(['id' => 1])->one();
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
-    <head>
-        <!-- Google Analytics -->
-        <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                        m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        <head>
+                <!-- Google Analytics -->
 
-            ga('create', 'UA-XXXX-Y', 'auto');
-            ga('send', 'pageview');
+                <!-- End Google Analytics -->
+                <meta charset="<?= Yii::$app->charset ?>">
+                <link rel="shortcut icon" href="<?= yii::$app->homeUrl; ?>images/favicon.png">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <meta name="robots" content="noindex,nofollow">
+                <script type='text/javascript' src='<?= yii::$app->homeUrl; ?>js/jquery.js'></script>
 
-        </script>
-        <!-- End Google Analytics -->
-        <meta charset="<?= Yii::$app->charset ?>">
-        <link rel="shortcut icon" href="<?= yii::$app->homeUrl; ?>images/favicon.png">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noindex,nofollow">
-        <?= Html::csrfMetaTags() ?>
-        <title><?= Html::encode($this->title) ?></title>
-        <?php $this->head() ?>
-    </head>
-    <body>
-        <?php $this->beginBody() ?>
-        <?php $action = Yii::$app->controller->id . '/' . Yii::$app->controller->action->id; // controller action id    ?>
-        <header class="header"><!--header-->
-            <!--head-top-section-->
-            <section class="top-section"><!--top-section-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="top-cont-left">Welcome to Avensia Group</div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="top-right-section">
-                                <div class="top-link">
-                                    <ul>
-                                        <li>
-                                            <?= Html::a('Blog', ['/site/blog']) ?>
-                                        </li>
-                                        <li><span>|</span></li>
-                                        <li>
-                                            <a href="http://uaeyellowpagesonline.com/companies/avensia-general-trading-llc-1295434.htm" target="_blank">Used Links</a>
-                                        </li>
-                                        <li><span>|</span></li>
-                                        <li>
-                                            <?= Html::a('Downloads', ['/site/downloads']) ?>
-                                        </li>
-                                        <li><span>|</span></li>
-                                        <li>
-                                            <?= Html::a('Our Clients', ['/site/our-clients']) ?>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="follows-top">
-                                    <ul>
-                                        <li> <a href="#" target="_blank"> <i class="fa fa-facebook"></i> </a></li>
-                                        <li> <a href="#" target="_blank"> <i class="fa fa-twitter"></i> </a></li>
-                                        <li> <a href="#" target="_blank"> <i class="fa fa-linkedin"></i> </a></li>
-                                        <li> <a href="#" target="_blank"> <i class="fa fa-youtube"></i> </a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                <?= Html::csrfMetaTags() ?>
+                <title><?= Html::encode($this->title) ?></title>
+                <?php $this->head() ?>
+        </head>
+        <body>
+                <?php $this->beginBody() ?>
+                <?php $action = Yii::$app->controller->id . '/' . Yii::$app->controller->action->id; // controller action id    ?>
 
-            <!--top-section-->
-            <section class="head-middle-section"><!--head-top-section-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <h1 class="logo">
-                                <?= Html::a('<img src="' . yii::$app->homeUrl . 'images/logo.png" alt="Avensia Group" title="Avensia Group" class="img-fluid">', ['/site/index']) ?>
-                            </h1>
-                        </div>
-                        <div class="col-sm-8">
-                            <div class="top-contat">
-                                <div class="phone"> <small class="small">Facility Management</small>
-                                    <h3 class="head-text"><?= $contact_info->facility_management_phone ?></h3>
-                                </div>
-                                <div class="phone"> <small class="small">IT & Technical Service</small>
-                                    <h3 class="head-text"><?= $contact_info->it_phone ?></h3>
-                                </div>
-                                <div class="phone border-left"> <small class="small">General Trading</small>
-                                    <h3 class="head-text"><?= $contact_info->general_trading_phone ?></h3>
-                                </div>
-                                <div class="mail"> <small class="small">Email:</small>
-                                    <h3 class="head-text"><?= $contact_info->email ?></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div class="nav-section"><!--nav-section-->
-                <div class="container">
-                    <div class="main-nav-section">
-                        <nav class="navbar navbar-toggleable-lg navbar-light bg-faded navbar-expand-lg">
-                            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span class="nav_titel">Menu</span>
-                                <div class="main-icon-bar"> <i class="fa fa-bars"></i></div>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                                <ul class="navbar-nav">
-                                    <li>
-                                        <?= Html::a('Home', ['/site/index'], ['class' => $action == 'site/index' ? 'active' : '']) ?>
-                                    </li>
-                                    <li>
-                                        <?= Html::a('About Us', ['/site/about'], ['class' => $action == 'site/about' ? 'active' : '']) ?>
-                                    </li>
-                                    <li class="dropdown"> <a href=""  data-toggle="dropdown" class="<?= $action == 'site/general-trading' ? 'active' : '' ?>">General trading</a>
-                                        <ul class="dropdown-menu animated2 fadeInUp">
-                                            <?php
-                                            if (!empty($general_tradings)) {
-                                                foreach ($general_tradings as $general_trading) {
-                                                    ?>
-                                                    <li>
-                                                        <?= Html::a($general_trading->title, ['/site/general-trading', 'trade' => $general_trading->canonical_name], ['class' => 'dropdown-item']) ?>
-                                                    </li>
-                                                    <?php
-                                                }
-                                            }
-                                            ?>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"> <a href=""  data-toggle="dropdown" class="<?= $action == 'site/it' || $action == 'site/it-products' ? 'active' : '' ?>">IT</a>
-                                        <ul class="dropdown-menu animated2 fadeInUp">
-                                            <?php
-                                            if (!empty($it_service_links)) {
-                                                foreach ($it_service_links as $it_service_link) {
-                                                    ?>
-                                                    <li>
-                                                        <?= Html::a($it_service_link->service, ['/site/it-service', 'page' => $it_service_link->canonical_name], ['class' => 'dropdown-item']) ?>
-                                                    </li>
-                                                    <?php
-                                                }
-                                            }
-                                            ?>
-                                            <li>
-                                                <?= Html::a('IT Products', ['/site/it-products'], ['class' => 'dropdown-item']) ?>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"> <a href=""  data-toggle="dropdown" class="<?= $action == 'site/technical-service' ? 'active' : '' ?>">technical service</a>
-                                        <ul class="dropdown-menu animated2 fadeInUp">
-                                            <?php
-                                            if (!empty($technical_service_links)) {
-                                                foreach ($technical_service_links as $technical_service_link) {
-                                                    ?>
-                                                    <li>
-                                                        <?= Html::a($technical_service_link->service, ['/site/technical-service', 'page' => $technical_service_link->canonical_name], ['class' => 'dropdown-item']) ?>
-                                                    </li>
-                                                    <?php
-                                                }
-                                            }
-                                            ?>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"> <a href=""  data-toggle="dropdown" class="<?= $action == 'site/facility-management' ? 'active' : '' ?>">facility management</a>
-                                        <ul class="dropdown-menu animated2 fadeInUp">
-                                            <?php
-                                            if (!empty($facility_service_links)) {
-                                                foreach ($facility_service_links as $facility_service_link) {
-                                                    ?>
-                                                    <li>
-                                                        <?= Html::a($facility_service_link->service, ['/site/facility-management', 'page' => $facility_service_link->canonical_name], ['class' => 'dropdown-item']) ?>
-                                                    </li>
-                                                    <?php
-                                                }
-                                            }
-                                            ?>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <?= Html::a('gallery', ['/site/gallery'], ['class' => $action == 'site/gallery' ? 'active' : '']) ?>
-                                    </li>
-                                    <li>
-                                        <?= Html::a('Contact', ['/site/contact'], ['class' => $action == 'site/contact' ? 'active' : '']) ?>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <section class="main_head navbar-custom fixed-top" role="navigation"><!--fixed-top header-->
-                <div class="heder-fixed">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-2 col-md-4 col-4">
-                                <h1 class="logo">
-                                    <?= Html::a('<img src="' . yii::$app->homeUrl . 'images/top-fixed-logo.png" alt="Avensia Group" title="Avensia Group" class="img-fluid">', ['/site/index']) ?>
-                                </h1>
-                            </div>
-                            <div class="col-lg-10 col-md-8 col-8">
-                                <div class="main-nav-section">
-                                    <nav class="navbar navbar-toggleable-lg navbar-light bg-faded navbar-expand-lg">
-                                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown2" aria-controls="navbarNavDropdown2" aria-expanded="false" aria-label="Toggle navigation">
-                                            <div class="main-icon-bar"> <i class="fa fa-bars"></i></div>
-                                        </button>
-                                        <div class="collapse navbar-collapse" id="navbarNavDropdown2">
-                                            <ul class="navbar-nav">
-                                                <li>
-                                                    <?= Html::a('Home', ['/site/index'], ['class' => $action == 'site/index' ? 'active' : '']) ?>
-                                                </li>
-                                                <li>
-                                                    <?= Html::a('About Us', ['/site/about'], ['class' => $action == 'site/about' ? 'active' : '']) ?>
-                                                </li>
-                                                <li class="dropdown"> <a href=""  data-toggle="dropdown" class="<?= $action == 'site/general-trading' ? 'active' : '' ?>">General trading</a>
-                                                    <ul class="dropdown-menu animated2 fadeInUp">
-                                                        <?php
-                                                        if (!empty($general_tradings)) {
-                                                            foreach ($general_tradings as $general_trading) {
-                                                                ?>
-                                                                <li>
-                                                                    <?= Html::a($general_trading->title, ['/site/general-trading', 'trade' => $general_trading->canonical_name], ['class' => 'dropdown-item']) ?>
-                                                                </li>
-                                                                <?php
-                                                            }
-                                                        }
-                                                        ?>
-                                                    </ul>
-                                                </li>
-                                                <li class="dropdown"> <a href=""  data-toggle="dropdown" class="<?= $action == 'site/it' || $action == 'site/it-products'? 'active' : '' ?>">IT</a>
-                                                    <ul class="dropdown-menu animated2 fadeInUp">
-                                                        <?php
-                                                        if (!empty($it_service_links)) {
-                                                            foreach ($it_service_links as $it_service_link) {
-                                                                ?>
-                                                                <li>
-                                                                    <?= Html::a($it_service_link->service, ['/site/it-service', 'page' => $it_service_link->canonical_name], ['class' => 'dropdown-item']) ?>
-                                                                </li>
-                                                                <?php
-                                                            }
-                                                        }
-                                                        ?>
-                                                        <li>
-                                                            <?= Html::a('IT Products', ['/site/it-products'], ['class' => 'dropdown-item']) ?>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="dropdown"> <a href="#"  data-toggle="dropdown" class="<?= $action == 'site/technical-service' ? 'active' : '' ?>">technical service</a>
-                                                    <ul class="dropdown-menu animated2 fadeInUp">
-                                                        <?php
-                                                        if (!empty($technical_service_links)) {
-                                                            foreach ($technical_service_links as $technical_service_link) {
-                                                                ?>
-                                                                <li>
-                                                                    <?= Html::a($technical_service_link->service, ['/site/technical-service', 'page' => $technical_service_link->canonical_name], ['class' => 'dropdown-item']) ?>
-                                                                </li>
-                                                                <?php
-                                                            }
-                                                        }
-                                                        ?>
-                                                    </ul>
-                                                </li>
-                                                <li class="dropdown"> <a href="#"  data-toggle="dropdown" class="<?= $action == 'site/facility-management' ? 'active' : '' ?>">facility management</a>
-                                                    <ul class="dropdown-menu animated2 fadeInUp">
-                                                        <?php
-                                                        if (!empty($facility_service_links)) {
-                                                            foreach ($facility_service_links as $facility_service_link) {
-                                                                ?>
-                                                                <li>
-                                                                    <?= Html::a($facility_service_link->service, ['/site/facility-management', 'page' => $facility_service_link->canonical_name], ['class' => 'dropdown-item']) ?>
-                                                                </li>
-                                                                <?php
-                                                            }
-                                                        }
-                                                        ?>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <?= Html::a('gallery', ['/site/gallery'], ['class' => $action == 'site/gallery' ? 'active' : '']) ?>
-                                                </li>
-                                                <li>
-                                                    <?= Html::a('Contact', ['/site/contact'], ['class' => $action == 'site/contact' ? 'active' : '']) ?>
-                                                </li>
-                                            </ul>
+
+        <body class="home page-template-default page page-id-4420 kingcomposer kc-css-system tribe-no-js masthead-fixed">
+                <div id="page" class="hfeed site">
+                        <div class="opal-page-inner row-offcanvas row-offcanvas-left">
+
+                                <div class="topbar-mobile  hidden-lg hidden-md">
+                                        <div class="active-mobile pull-left">
+                                                <button data-toggle="offcanvas" class="btn btn-offcanvas btn-toggle-canvas offcanvas" type="button">
+                                                        <i class="fa fa-bars"></i>
+                                                </button>
                                         </div>
-                                    </nav>
                                 </div>
-                            </div>
+                                <header id="opal-masthead" class="site-header" role="banner">
+                                        <div class="container-fuild">
+                                                <div class="header-main">
+                                                        <div class="logo-wrapper">
+                                                                <div id="opal-logo" class="logo logo-theme">
+                                                                        <a href="index.php">
+                                                                                <img src="<?= Yii::$app->homeUrl ?>images/logo.png" alt="BurgerSlap" />
+                                                                        </a>
+                                                                </div>
+                                                        </div>
+                                                        <div class="container">
+                                                                <div id="opal-mainmenu" class="opal-mainmenu menu-megamenu navbar navbar-mega hidden-xs hidden-sm">
+                                                                        <div class="opal-mainmenu hidden-xs hidden-sm">
+
+                                                                                <nav class="opal-primary text-center" role="navigation">
+                                                                                        <div class="collapse navbar-collapse navbar-mega-collapse nopadding">
+                                                                                                <ul id="menu-primary" class="nav navbar-nav megamenu">
+
+                                                                                                        <li id="menu-item-14169" class="<?= Yii::$app->controller->action->id == 'index' || '' ? 'active' : '' ?>"><?= Html::a('Home', ['/site/index']) ?></li>
+                                                                                                        <li id="menu-item-14169" class="<?= Yii::$app->controller->action->id == 'menus' ? 'active' : '' ?>"><?= Html::a('Menus', ['/site/menus']) ?></li>
+                                                                                                        <li id="menu-item-14169" class="<?= Yii::$app->controller->action->id == 'contact' ? 'active' : '' ?>"><?= Html::a('Contact', ['/site/contact']) ?></li>
+                                                                                                </ul>
+                                                                                        </div>
+                                                                                </nav>
+
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+
+                                                        <div id="google_translate_element"></div><script type="text/javascript">
+                                                                function googleTranslateElementInit() {
+                                                                        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,en,ru,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                                                                }
+                                                        </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                                                        <div class="header-support hidden-sm hidden-xs">
+                                                                <div class="widget">
+                                                                        <div class="text-title">Contact Us</div>
+                                                                        <div class="phone">(768)-897-5258</div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+
+                                        </div>
+
+                                        <div id="opal-off-canvas" class="opal-off-canvas sidebar-offcanvas hidden-lg hidden-md">
+                                                <div class="opal-off-canvas-body">
+                                                        <div class="offcanvas-head clearfix">
+                                                                <button type="button" class="btn btn-offcanvas btn-toggle-canvas btn-default" data-toggle="offcanvas">
+                                                                        <i class="fa fa-close"></i>
+                                                                </button>
+                                                                <span>Menu</span>
+                                                        </div>
+                                                        <nav class="navbar navbar-offcanvas navbar-static" role="navigation">
+                                                                <div class="navbar-collapse navbar-offcanvas-collapse">
+                                                                        <ul id="main-menu-offcanvas" class="nav navbar-nav">
+                                                                                <li id="menu-item-14169" class="<?= Yii::$app->controller->action->id == 'index' || '' ? 'active' : '' ?>"><?= Html::a('Home', ['/site/index']) ?></li>
+                                                                                <li id="menu-item-14169" class="<?= Yii::$app->controller->action->id == 'menus' ? 'active' : '' ?>"><?= Html::a('Menus', ['/site/menus']) ?></li>
+                                                                                <li id="menu-item-14169" class="<?= Yii::$app->controller->action->id == 'contact' ? 'active' : '' ?>"><?= Html::a('Contact', ['/site/contact']) ?></li>
+                                                                        </ul>
+                                                                </div>
+                                                        </nav>
+
+                                                </div>
+                                        </div>
+
+                                </header>
+
+                                <?= $content ?>
+                                <?php if (Yii::$app->controller->action->id == 'contact' || '') { ?>
+                                        <div id="contact-page-footer">
+                                        <?php } ?>
+                                        <footer id="opal-footer" class="opal-footer" role="contentinfo">
+
+                                                <div class="mass-bottom">
+                                                        <div class="container-fuild">
+                                                                <aside id="kc_widget_content-3" class="widget widget-style clearfix kc_widget_content">
+                                                                        <div class="kc-content-widget">
+                                                                                <style type="text/css">
+                                                                                        @media only screen and (min-width: 1000px) and (max-width: 5000px) {
+                                                                                                body.kc-css-system .kc-css-428122 {
+                                                                                                        width: 100%;
+                                                                                                }
+                                                                                        }
+
+                                                                                        .kc-css-770077 .kc_column {
+                                                                                                padding-left: 0px;
+                                                                                                padding-right: 0px;
+                                                                                        }
+
+                                                                                        .kc-css-770077>.kc-wrap-columns {
+                                                                                                margin-left: -0px;
+                                                                                                margin-right: -0px;
+                                                                                                width: calc(100% + 0px);
+                                                                                        }
+                                                                                </style>
+                                                                                <section class="kc-elm kc-css-770077 kc_row">
+                                                                                        <div class="kc-row-container">
+                                                                                                <div class="kc-wrap-columns">
+                                                                                                        <div class="kc-elm kc-css-813472 kc_col-sm-12 kc_column kc_col-sm-12">
+                                                                                                                <div class="kc-col-container">
+                                                                                                                        <div id="map167026914" data-lat="40.6700" data-lng=" -73.9400" class="kc-google-maps opal-kc-google-maps" style="width: 100%;height: 500px;">
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </section>
+                                                                        </div>
+                                                                </aside>
+                                                        </div>
+                                                </div>
+                                                <div class="footer-bottom">
+                                                        <div class="container">
+                                                                <div class="inner">
+                                                                        <div class="row">
+                                                                                <div class="col-md-3 col-sm-12 col-xs-12">
+                                                                                        <div class="footer-image">
+                                                                                                <aside id="widget_sp_image-32" class="widget clearfix widget_sp_image"><img width="119" height="110" alt="logo-footer" class="attachment-full aligncenter" style="max-width: 100%;" src="<?= Yii::$app->homeUrl ?>images/logo.png" /></aside>
+                                                                                                <aside id="text-49" class="widget clearfix widget_text">
+                                                                                                        <div class="textwidget">
+                                                                                                                <div class="media">
+                                                                                                                        <div class="media-left"></div>
+                                                                                                                        <div class="media-body">901-947 South Drive, Houston, TX 77057, USA</div>
+                                                                                                                </div>
+                                                                                                                <div class="media">
+                                                                                                                        <div class="media-left"></div>
+                                                                                                                        <div class="media-body">support@gmail.com</div>
+                                                                                                                </div>
+                                                                                                                <div class="media">
+                                                                                                                        <div class="media-left"></div>
+                                                                                                                        <div class="media-body">655-478-3452</div>
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                </aside>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="column col-md-3 col-sm-12 col-xs-12">
+                                                                                        <aside id="text-50" class="widget clearfix widget_text">
+                                                                                                <h3 class="widget-title">Hours Open</h3>
+                                                                                                <div class="textwidget">
+                                                                                                        <ul class="list-unstyled hours-open">
+                                                                                                                <li><span>Monday-Thursday</span>11:00-21:00</li>
+                                                                                                                <li><span>Friday-Saturday</span>11:30-22:00</li>
+                                                                                                                <li><span>Sundays</span>12:00-20:00</li>
+                                                                                                        </ul>
+                                                                                                </div>
+                                                                                        </aside>
+                                                                                </div>
+                                                                                <div class="column col-md-3 col-sm-12 col-xs-12">
+                                                                                        <aside id="mc4wp_form_widget-12" class="widget clearfix widget_mc4wp_form_widget">
+                                                                                                <h3 class="widget-title">Newsletter</h3>
+                                                                                                <form id="" class="mc4wp-form mc4wp-form-6363 mc4wp-form-basic" method="post" data-name="">
+                                                                                                        <div class="mc4wp-form-fields">
+                                                                                                                <div class="form-newsletter">
+                                                                                                                        <p class="decreptions">
+                                                                                                                                Healthy Cooking Is A Must For Families
+                                                                                                                        </p>
+                                                                                                                        <div class="input-group">
+                                                                                                                                <input id="mc4wp_email" class="form-control" name="EMAIL" required="required" type="email" placeholder="email@domain.com" />
+                                                                                                                                <button type="submit" class="btn-submit"><i class="fa fa-paper-plane-o"></i></button>
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                </form>
+                                                                                                <!-- / MailChimp for WordPress Plugin -->
+                                                                                        </aside>
+                                                                                </div>
+                                                                                <div class="column col-md-3 col-sm-12 col-xs-12">
+                                                                                        <aside id="wpopal_flickr_widget-3" class="widget clearfix widget_wpopal_flickr_widget">
+                                                                                                <h3 class="widget-title">Gallery</h3>
+                                                                                                <div class="flickr-gallery widget-content">
+                                                                                                        <script type="text/javascript">
+                                                                function jsonFlickrApi(rsp) {
+                                                                        if (rsp.stat != "ok") {
+                                                                                // If this executes, something broke!
+                                                                                return;
+                                                                        }
+
+                                                                        //variable "s" is going to contain
+                                                                        //all the markup that is generated by the loop below
+                                                                        var s = "";
+
+                                                                        //this loop runs through every item and creates HTML
+                                                                        for (var i = 0; i < rsp.photos.photo.length; i++) {
+                                                                                photo = rsp.photos.photo[i];
+                                                                                //notice that "t.jpg" is where you change the
+                                                                                //size of the image
+                                                                                t_url = "http://farm2.static.flickr.com/" + photo.server + "/" +
+                                                                                        photo.id + "_" + photo.secret + "_" + "s.jpg";
+
+                                                                                p_url = "http://www.flickr.com/photos/" +
+                                                                                        photo.owner + "/" + photo.id;
+
+                                                                                s += '<div class="flickr_badge_image"><a href="' + p_url + '">' + '<img alt="' +
+                                                                                        photo.title + '"src="' + t_url + '"/>' + '</a></div>';
+                                                                        }
+
+                                                                        document.write(s);
+                                                                }
+                                                                                                        </script>
+                                                                                                        <script type="text/javascript" src="https://api.flickr.com/services/rest/?format=json&amp;method=flickr.photos.search&amp;user_id=142095673@N08&amp;api_key=c9d2c2fda03a2ff487cb4769dc0781ea&amp;media=photos&amp;per_page=6&amp;privacy_filter=1"></script>
+                                                                                                </div>
+                                                                                        </aside>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+                                                <section id="opal-copyright" class="opal-copyright clearfix">
+                                                        <div class="container">
+                                                                <div class="inner">
+                                                                        <a href="#" class="scrollup"><span class="fa fa-angle-up"></span></a> Copyright © 2018 - Chicken Rashid - All Rights Reserved.
+                                                                </div>
+                                                </section>
+                                        </footer>
+                                        <?php if (Yii::$app->controller->action->id == 'contact' || '') { ?>
+                                        </div>
+                                <?php } ?>
                         </div>
-                    </div>
                 </div>
-            </section>
-            <!--fixed-top header-->
-            <!--nav-section-->
-        </header>
-        <?= $content ?>
+                <?php $this->endBody() ?>
 
-        <footer class="footer"><!--footer-->
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <h2 class="f-head">ABOUT US</h2>
-                        <div class="f-about">
-                            <p>
-                                <?php
-                                if (!empty($about_footer)) {
-                                    if ($about_footer->about_content_in_footer != '') {
-                                        echo $about_footer->about_content_in_footer;
-                                    }
-                                }
-                                ?>
-                            </p>
-                            <div class="f-follows">
-                                <ul>
-                                    <li> <span>follow us on  - </span></li>
-                                    <?php if (!empty($about_footer)) { ?>
-                                        <li> <a href="<?= $about_footer->facebook_link != '' ? $about_footer->facebook_link : '' ?>" target="_blank"> <i class="fa fa-facebook"></i> </a></li>
-                                        <li> <a href="<?= $about_footer->twitter_link != '' ? $about_footer->twitter_link : '' ?>" target="_blank"> <i class="fa fa-twitter"></i> </a></li>
-                                        <li> <a href="<?= $about_footer->linkedin_link != '' ? $about_footer->linkedin_link : '' ?>" target="_blank"> <i class="fa fa-linkedin"></i> </a></li>
-                                        <li> <a href="<?= $about_footer->youtube_link != '' ? $about_footer->youtube_link : '' ?>" target="_blank"> <i class="fa fa-youtube"></i> </a></li>
-                                    <?php }
-                                    ?>
-                                </ul>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2">
-                        <h3 class="f-head">useful links</h3>
-                        <ul class="f-list">
-                            <li>
-                                <?= Html::a('HOME', ['/site/index']) ?>
-                            </li>
-                            <li>
-                                <?= Html::a('ABOUT', ['/site/about']) ?>
-                            </li>
-                            <li>
-                                <?= Html::a('GALLERY', ['/site/gallery']) ?>
-                            </li>
-                            <li>
-                                <?= Html::a('SITEMAP', ['/site/site-map']) ?>
-                            </li>
-                            <li>
-                                <?= Html::a('BLOG', ['/site/blog']) ?>
-                            </li>
-                            <li>
-                                <a href="http://uaeyellowpagesonline.com/companies/avensia-general-trading-llc-1295434.htm" target="_blank">Used Links</a>
-                            </li>
-                            <li>
-                                <?= Html::a('CONTACT', ['/site/contact']) ?>
-                            </li>
-                            <li>
-                                <?= Html::a('OUR CLIENTS', ['/site/our-clients']) ?>
-                            </li>
-                        </ul>
-
-                    </div>
-                    <div class="col-lg-3">
-                        <h3 class="f-head">Our Services</h3>
-                        <ul class="f-list">
-                            <li>
-                                <?= Html::a('General trading', ['/site/general-trading']) ?>
-                            </li>
-                            <li>
-                                <?= Html::a('IT', ['/site/it-service']) ?>
-                            </li>
-                            <li>
-                                <?= Html::a('Technical Service', ['/site/technical-service']) ?>
-                            </li>
-                            <li>
-                                <?= Html::a('Facility Management', ['/site/facility-management']) ?>
-                            </li>
-                        </ul>
-
-                    </div>
-                    <div class="col-lg-3">
-                        <h3 class="f-head">Address</h3>
-                        <div class="f-address"><?= $contact_info->addtess ?></div>
-                        <div class="f-address f-phone"><small>General Trading</small><?= $contact_info->general_trading_phone ?></div>
-                        <div class="f-address f-phone"><small>IT & Technical Service</small><?= $contact_info->it_phone ?></div>
-                        <div class="f-address f-phone"><small>Facility Management</small><?= $contact_info->facility_management_phone ?></div>
-                        <div class="f-address f-mail"><?= $contact_info->email ?></div>
-
-                    </div>
-                </div>
-            </div>
-        </footer><!--footer-->
-        <section class="copyright"><!--copyright-->
-            <a href="#" class="scrollup">Scroll</a>
-            <div class="container">
-                <p>Copyright © <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> <b>Avensiauae.</b> All Rights Reserved</p>
-            </div>
-        </section>
-
-        <?php $this->endBody() ?>
-        <script type="text/javascript">
-            $(document).ready(function () {
-
-                $(window).scroll(function () {
-
-                    if ($(this).scrollTop() > 100) {
-
-                        $('.scrollup').fadeIn();
-                    } else {
-                        $('.scrollup').fadeOut();
-                    }
-                });
-
-                $('.scrollup').click(function () {
-                    $("html, body").animate({scrollTop: 0}, 1000);
-                    return false;
-                });
-
-            });
-        </script>
-        <script type="text/javascript" charset="utf-8">
-            $(document).ready(function () {
-                $(".gallery:first a[rel^='prettyPhoto']").prettyPhoto({animation_speed: 'normal', theme: 'light_square', slideshow: 2000, autoplay_slideshow: true});
-
-            });
-        </script>
-    </body>
+        </body>
 </html>
 <?php $this->endPage() ?>

@@ -16,37 +16,37 @@ use Yii;
  */
 class ContactForm extends \yii\db\ActiveRecord {
 
-    /**
-     * {@inheritdoc}
-     */
-    public static function tableName() {
-        return 'contact_form';
-    }
+        /**
+         * {@inheritdoc}
+         */
+        public static function tableName() {
+                return 'contact_form';
+        }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function rules() {
-        return [
-                [['message', 'name', 'email', 'phone'], 'required'],
-                [['message'], 'string'],
-                [['date'], 'safe'],
-                [['name', 'email'], 'string', 'max' => 100],
-        ];
-    }
+        /**
+         * {@inheritdoc}
+         */
+        public function rules() {
+                return [
+                        [['message', 'name', 'email', 'phone'], 'required'],
+                        [['message'], 'string'],
+                        [['date', 'item_id', 'type'], 'safe'],
+                        [['name', 'email'], 'string', 'max' => 100],
+                ];
+        }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels() {
-        return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'email' => 'Email',
-            'phone' => 'Phone',
-            'message' => 'Message',
-            'date' => 'Date',
-        ];
-    }
+        /**
+         * {@inheritdoc}
+         */
+        public function attributeLabels() {
+                return [
+                    'id' => 'ID',
+                    'name' => 'Name',
+                    'email' => 'Email',
+                    'phone' => 'Phone',
+                    'message' => 'Message',
+                    'date' => 'Date',
+                ];
+        }
 
 }

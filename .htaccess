@@ -1,0 +1,24 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php)
+RewriteRule ^(.+)$ index.php?$1 [PT,L,QSA]
+
+#RewriteCond %{HTTP_HOST} ^eazycheque.com$ [NC]
+#RewriteRule (.*) http://www.eazycheque.com/$1 [R=301,L]
+
+#RewriteCond %{HTTP_HOST} !^www\. [NC]
+#RewriteRule ^(.*)$ http://www.eazycheque.com/$1 [L,R=301]
+#
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://www.eazycheque.com/$1 [L,R=301]
+
+
+# Deny accessing below extensions
+<Files ~ "(.json|.lock|.git|.bat|.md|.txt)">
+Order allow,deny
+Deny from all
+</Files>
+
+# Deny accessing dot files
+RewriteRule (^\.|/\.) - [F]
